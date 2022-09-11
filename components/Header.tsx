@@ -1,21 +1,27 @@
 import {
-  BellIcon,
-  ChatBubbleLeftIcon,
+  Bars3Icon,
   ChevronDownIcon,
   GlobeAmericasIcon,
   HomeIcon,
   MagnifyingGlassIcon,
   PlusIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/solid";
+import {
+  MegaphoneIcon,
   SparklesIcon,
   VideoCameraIcon,
-} from "@heroicons/react/24/solid";
-import { MegaphoneIcon, StarIcon } from "@heroicons/react/24/outline";
+  BellIcon,
+  ChatBubbleLeftIcon,
+} from "@heroicons/react/24/outline";
+
+import Logo from "../Reddit-Logo.png";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 flex bg-white px-4 py-2 shadow-sm">
+    <header className="sticky top-0 z-50 flex bg-white px-4 py-2 shadow-sm items-center">
       <div className="relative h-10 w-20 flex-shrink-0 cursor-pointer">
-        <img src="#" alt="REDDIT LOGO" />
+        <img src={Logo.src} alt="REDDIT LOGO" />
       </div>
 
       <div className="mx-7 flex items-center xl:min-w-[300px]">
@@ -35,7 +41,7 @@ const Header = () => {
         <button hidden type="submit" />
       </form>
 
-      <div className="flex">
+      <div className="flex text-gray-500 space-x-2 items-center mx-5 hidden lg:inline-flex">
         <SparklesIcon className="icon" />
         <GlobeAmericasIcon className="icon" />
         <VideoCameraIcon className="icon" />
@@ -44,6 +50,16 @@ const Header = () => {
         <BellIcon className="icon" />
         <PlusIcon className="icon" />
         <MegaphoneIcon className="icon" />
+      </div>
+
+      <div className="ml-5 flex items-center lg:hidden">
+        <Bars3Icon className="icon" />
+      </div>
+
+      {/* Sign In / Sign Out */}
+      <div className="hidden items-center lg:flex space-x-2 border border-gray-100 p-2">
+        <UserCircleIcon className="icon flex-shrink-0" />
+        <p className="text-gray-600">Sign In</p>
       </div>
     </header>
   );
